@@ -38,11 +38,11 @@ describe Markup do
   end
   
   it 'parses fenced AA blocks' do
-    Markup.render("~~~\nasciiart\n~~~").must_match(/^<div.+<\/div>$/)
+    Markup.render("~~~\nasciiart\n~~~").must_match(/^<pre class="aa".+<\/pre>$/)
   end
   
   it 'parses fenced code blocks' do
-    Markup.render("```\ncode\n```").must_match(/^<pre.+<\/pre>$/)
+    Markup.render("```\ncode\n```").must_match(/^<pre class="code".+<\/pre>$/)
   end
   
   it 'ignores AA blocks inside spoilers' do
@@ -124,7 +124,7 @@ describe Markup do
     
     expected = '&lt;<em>em</em>&gt; &lt;<a class="ql" href="#1">&gt;&gt;1' <<
       '</a>&lt; &amp;<span class="s">&lt;spoiler&lt;</span>&amp;<br>' <<
-      '<div class="aa">&#39;aa&lt;</div>&quot;<br><pre><code class=' << 
+      '<pre class="aa">&#39;aa&lt;</pre>&quot;<br><pre class="code"><code class=' << 
       '"prettyprint">&#39;code&lt;</code></pre>&lt;<a href="' <<
       'https:&#47;&#47;abc&lt;">https:&#47;&#47;abc&lt;</a><br>'
       

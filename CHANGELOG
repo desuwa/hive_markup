@@ -1,0 +1,6 @@
+0.0.2 - 2014-10-06
+  * Ascii Art blocks now use <pre> tags with "aa" as CSS class.
+  * Code blocks now use "code" as CSS class.
+
+0.0.1 - 2014-10-04
+  * First release.

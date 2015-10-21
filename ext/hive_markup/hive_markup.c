@@ -268,11 +268,11 @@ static size_t parse_aablock(const uint8_t *text, size_t start, size_t size, buff
     return 0;
   }
   
-  buf_puts(out_buf, "<div class=\"aa\">");
+  buf_puts(out_buf, "<pre class=\"aa\">");
   
   escape_html(text, block_start, block_end, out_buf);
   
-  buf_puts(out_buf, "</div>");
+  buf_puts(out_buf, "</pre>");
   
   if (end + 1 < size) {
     ++end;
@@ -332,7 +332,7 @@ static size_t parse_codeblock(const uint8_t *text, size_t start, size_t size, bu
     return 0;
   }
   
-  buf_puts(out_buf, "<pre><code class=\"prettyprint\">");
+  buf_puts(out_buf, "<pre class=\"code\"><code class=\"prettyprint\">");
   
   escape_html(text, block_start, block_end, out_buf);
   
